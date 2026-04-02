@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calma — Bem-Estar Emocional</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <section class="screen screen-onboarding active" id="screen-onboarding">
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+    <div class="onboarding-content">
+      <div class="logo-area">
+        <div class="logo-icon">
+          <img src="assets/logo.svg" alt="" class="logo-icon-image">
+        </div>
+        <span class="logo-text">calma</span>
+      </div>
+      <div class="headline-block">
+        <h1 class="headline-main">como você está<br><em>de verdade?</em></h1>
+        <p class="headline-sub">Um espaço seguro para acompanhar<br>suas emoções dia a dia.</p>
+      </div>
+      <div class="mood-selector">
+        <p class="mood-question">Neste momento, me sinto…</p>
+        <div class="mood-options">
+          <button class="mood-btn" data-mood="ótimo" onclick="selectMood(this)">
+            <span class="mood-face">😌</span>
+            <span class="mood-label">ótimo</span>
+          </button>
+          <button class="mood-btn" data-mood="bem" onclick="selectMood(this)">
+            <span class="mood-face">🙂</span>
+            <span class="mood-label">bem</span>
+          </button>
+          <button class="mood-btn" data-mood="neutro" onclick="selectMood(this)">
+            <span class="mood-face">😐</span>
+            <span class="mood-label">neutro</span>
+          </button>
+          <button class="mood-btn" data-mood="cansado" onclick="selectMood(this)">
+            <span class="mood-face">😔</span>
+            <span class="mood-label">cansado</span>
+          </button>
+          <button class="mood-btn" data-mood="difícil" onclick="selectMood(this)">
+            <span class="mood-face">😢</span>
+            <span class="mood-label">difícil</span>
+          </button>
+        </div>
+      </div>
+      <div class="journal-area">
+        <textarea class="journal-input"
+          placeholder="Se quiser, escreva um pouco sobre como está se sentindo… (opcional)" rows="3"></textarea>
+      </div>
+      <button class="cta-btn" onclick="goToDashboard()">
+        <span>entrar no meu espaço</span>
+        <span class="svg-icon cta-icon" aria-hidden="true"></span>
+      </button>
+      <p class="reassurance">Tudo aqui é só seu. Privado, seguro e sem julgamentos.</p>
+    </div>
+  </section>
+  <section class="screen screen-dashboard" id="screen-dashboard">
+    <div class="dashboard-layout">
+      <aside class="sidebar">
+        <div class="sidebar-logo">
+          <img src="assets/logo-mark.svg" alt="" class="sidebar-logo-image">
+          <span>calma</span>
+        </div>
+        <nav class="sidebar-nav">
+          <a class="nav-item active" href="#">
+            <span class="svg-icon nav-icon nav-home" aria-hidden="true"></span>
+            <span>início</span>
+          </a>
+          <a class="nav-item" href="#">
+            <span class="svg-icon nav-icon nav-history" aria-hidden="true"></span>
+            <span>histórico</span>
+          </a>
+          <a class="nav-item" href="#">
+            <span class="svg-icon nav-icon nav-goals" aria-hidden="true"></span>
+            <span>metas</span>
+          </a>
+          <a class="nav-item" href="#">
+            <span class="svg-icon nav-icon nav-journal" aria-hidden="true"></span>
+            <span>diário</span>
+          </a>
+        </nav>
+        <div class="sidebar-user">
+          <div class="user-avatar">MA</div>
+          <div class="user-info">
+            <p class="user-name">Maria</p>
+            <p class="user-streak">🔥 7 dias seguidos</p>
+          </div>
+        </div>
+      </aside>
+      <main class="dashboard-main">
+        <header class="dash-header">
+          <div class="header-left">
+            <p class="header-date">quarta-feira, 1 de abril</p>
+            <h2 class="header-greeting">boa tarde, Maria ☀️</h2>
+          </div>
+          <div class="header-right">
+            <button class="notif-btn">
+              <span class="svg-icon notif-icon" aria-hidden="true"></span>
+              <span class="notif-badge">2</span>
+            </button>
+          </div>
+        </header>
+        <div class="mood-today-card">
+          <div class="mood-today-left">
+            <p class="mood-today-label">como você está hoje</p>
+            <div class="mood-today-value">
+              <span class="mood-today-emoji" id="dash-mood-emoji">😌</span>
+              <span class="mood-today-text" id="dash-mood-text">ótimo</span>
+            </div>
+            <p class="mood-today-msg" id="dash-mood-msg">Que bom saber disso! Aproveite esse estado de leveza hoje.</p>
+          </div>
+          <div class="mood-today-right">
+            <p class="mini-chart-label">seus últimos 7 dias</p>
+            <div class="mini-chart">
+              <div class="mini-bar" style="--h:40%" title="Seg: neutro"><span class="bar-day">S</span></div>
+              <div class="mini-bar" style="--h:65%" title="Ter: bem"><span class="bar-day">T</span></div>
+              <div class="mini-bar" style="--h:30%" title="Qua: cansado"><span class="bar-day">Q</span></div>
+              <div class="mini-bar" style="--h:80%" title="Qui: bem"><span class="bar-day">Q</span></div>
+              <div class="mini-bar" style="--h:55%" title="Sex: bem"><span class="bar-day">S</span></div>
+              <div class="mini-bar" style="--h:70%" title="Sáb: ótimo"><span class="bar-day">S</span></div>
+              <div class="mini-bar highlight" style="--h:90%" title="Dom: ótimo"><span class="bar-day">D</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="cards-grid">
+          <div class="card card-breath">
+            <div class="card-header">
+              <span class="card-icon">🌬️</span>
+              <h3>respiração guiada</h3>
+            </div>
+            <div class="breath-visual">
+              <div class="breath-circle" id="breathCircle">
+                <span class="breath-text" id="breathText">toque para começar</span>
+              </div>
+            </div>
+            <button class="card-action" onclick="toggleBreath()">iniciar exercício</button>
+          </div>
+          <div class="card card-gratitude">
+            <div class="card-header">
+              <span class="card-icon">🌱</span>
+              <h3>gratidão de hoje</h3>
+            </div>
+            <p class="gratitude-prompt">O que foi uma coisa boa que aconteceu hoje?</p>
+            <div class="gratitude-items">
+              <div class="gratitude-item">✦ Tomei café com calma de manhã</div>
+              <div class="gratitude-item">✦ Recebi uma mensagem carinhosa</div>
+            </div>
+            <div class="gratitude-input-row">
+              <input type="text" class="gratitude-input" placeholder="adicionar…">
+              <button class="add-btn">+</button>
+            </div>
+          </div>
+          <div class="card card-stats">
+            <div class="card-header">
+              <span class="card-icon">📊</span>
+              <h3>sua semana em números</h3>
+            </div>
+            <div class="stats-grid">
+              <div class="stat-item">
+                <span class="stat-value">7</span>
+                <span class="stat-label">dias de registro</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">4</span>
+                <span class="stat-label">exercícios feitos</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">68%</span>
+                <span class="stat-label">dias positivos</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">12</span>
+                <span class="stat-label">minutos de calma</span>
+              </div>
+            </div>
+          </div>
+          <div class="card card-quote">
+            <div class="card-header">
+              <span class="card-icon">💬</span>
+              <h3>mensagem do dia</h3>
+            </div>
+            <blockquote class="quote-text">
+              "Você não tem de controlar seus pensamentos. Você só precisa parar de deixar que eles controlem você."
+            </blockquote>
+            <p class="quote-author">— Dan Millman</p>
+            <button class="quote-share">compartilhar reflexão →</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </section>
+  <button class="back-btn" id="backBtn" onclick="goBack()" style="display:none">← voltar ao início</button>
+  <script src="scripts/breathingWidget.js"></script>
+  <script src="scripts/loadDashboard.js"></script>
+</body>
+</html>
