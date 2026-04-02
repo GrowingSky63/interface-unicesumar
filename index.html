@@ -67,7 +67,8 @@
   </section>
   <section class="screen screen-dashboard" id="screen-dashboard">
     <div class="dashboard-layout">
-      <aside class="sidebar">
+      <button class="sidebar-overlay" id="sidebarOverlay" type="button" aria-label="fechar menu lateral"></button>
+      <aside class="sidebar" id="dashboardSidebar">
         <div class="sidebar-logo">
           <img src="assets/logo-mark.svg" alt="" class="sidebar-logo-image">
           <span>calma</span>
@@ -105,6 +106,11 @@
             <h2 class="header-greeting">boa tarde, Maria ☀️</h2>
           </div>
           <div class="header-right">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="abrir menu" aria-controls="dashboardSidebar" aria-expanded="false">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
             <button class="notif-btn">
               <span class="svg-icon notif-icon" aria-hidden="true"></span>
               <span class="notif-badge">2</span>
@@ -203,5 +209,6 @@
   <button class="back-btn" id="backBtn" onclick="goBack()" style="display:none">← voltar ao início</button>
   <script src="scripts/breathingWidget.js"></script>
   <script src="scripts/loadDashboard.js"></script>
+  <script src="scripts/mobileSidebar.js"></script>
 </body>
 </html>
