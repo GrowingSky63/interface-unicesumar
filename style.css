@@ -10,6 +10,70 @@
    • Formas orgânicas → Visceral: curvas reduzem tensão percebida
    =================================================== */
 
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('assets/fonts/Cormorant_Garamond/static/CormorantGaramond-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('assets/fonts/Cormorant_Garamond/static/CormorantGaramond-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('assets/fonts/DM_Sans/static/DMSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('assets/fonts/DM_Sans/static/DMSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('assets/fonts/DM_Sans/static/DMSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ===== RESET ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; }
@@ -37,6 +101,12 @@ body {
   --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   --onboarding-pad-y: clamp(1rem, 2.2vh, 2rem);
   --onboarding-gap: clamp(1rem, 2vh, 1.75rem);
+  --icon-enter-arrow: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSI+DQoJPHBhdGggZD0iTTMgOC4xYTAuOSAwLjkgMCAwIDAgMCAxLjhoOC44M2wtMi4yIDIuMmEwLjkgMC45IDAgMSAwIDEuMjcgMS4yN2wzLjczLTMuNzNhMC45IDAuOSAwIDAgMCAwLTEuMjdsLTMuNzMtMy43M2EwLjkgMC45IDAgMSAwLTEuMjcgMS4yN2wyLjIgMi4ySDNaIiBmaWxsPSIjMDAwIi8+DQo8L3N2Zz4NCg==");
+  --icon-nav-home: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSI+DQogIDxwYXRoIGQ9Ik0yIDlMOSAybDcgN3Y3SDJWOXoiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjEuNiIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZmlsbD0ibm9uZSIvPg0KPC9zdmc+DQo=");
+  --icon-nav-history: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSI+DQogIDxjaXJjbGUgY3g9IjkiIGN5PSI5IiByPSI3IiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjYiIGZpbGw9Im5vbmUiLz4NCiAgPHBhdGggZD0iTTkgNXY0bDMgMiIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMS42IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4NCjwvc3ZnPg0K");
+  --icon-nav-goals: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSI+DQogIDxwYXRoIGQ9Ik05IDFsMi4xIDUuOUgxN2wtNC45IDMuNiAxLjkgNS45TDkgMTMuMSA0LjkgMTYuNGwxLjktNS45TDEgNi45aDUuOXoiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZmlsbD0ibm9uZSIvPg0KPC9zdmc+DQo=");
+  --icon-nav-journal: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSI+DQogIDxwYXRoIGQ9Ik0xNCAySDRhMiAyIDAgMDAtMiAydjEwYTIgMiAwIDAwMiAyaDEwYTIgMiAwIDAwMi0yVjRhMiAyIDAgMDAtMi0yeiIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMS41IiBmaWxsPSJub25lIi8+DQogIDxwYXRoIGQ9Ik02IDdoNk02IDExaDQiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+DQo8L3N2Zz4NCg==");
+  --icon-notification-bell: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSI+DQogIDxwYXRoIGQ9Ik0xMCAyYTYgNiAwIDAxNiA2djNsMiAySDJsMi0yVjhhNiA2IDAgMDE2LTZ6IiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiIGZpbGw9Im5vbmUiLz4NCiAgPHBhdGggZD0iTTggMTdhMiAyIDAgMDA0IDAiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjEuNSIvPg0KPC9zdmc+DQo=");
 }
 
 /* ===================================================
@@ -270,8 +340,8 @@ body {
 .cta-icon {
   width: 18px;
   height: 18px;
-  mask-image: url('assets/enter-arrow.svg');
-  -webkit-mask-image: url('assets/enter-arrow.svg');
+  mask-image: var(--icon-enter-arrow);
+  -webkit-mask-image: var(--icon-enter-arrow);
 }
 
 /* Mensagem de reasseguração ─
@@ -390,20 +460,20 @@ body {
   height: 18px;
 }
 .nav-home {
-  mask-image: url('assets/nav-home.svg');
-  -webkit-mask-image: url('assets/nav-home.svg');
+  mask-image: var(--icon-nav-home);
+  -webkit-mask-image: var(--icon-nav-home);
 }
 .nav-history {
-  mask-image: url('assets/nav-history.svg');
-  -webkit-mask-image: url('assets/nav-history.svg');
+  mask-image: var(--icon-nav-history);
+  -webkit-mask-image: var(--icon-nav-history);
 }
 .nav-goals {
-  mask-image: url('assets/nav-goals.svg');
-  -webkit-mask-image: url('assets/nav-goals.svg');
+  mask-image: var(--icon-nav-goals);
+  -webkit-mask-image: var(--icon-nav-goals);
 }
 .nav-journal {
-  mask-image: url('assets/nav-journal.svg');
-  -webkit-mask-image: url('assets/nav-journal.svg');
+  mask-image: var(--icon-nav-journal);
+  -webkit-mask-image: var(--icon-nav-journal);
 }
 .nav-item {
   display: flex; align-items: center; gap: 10px;
@@ -497,8 +567,8 @@ body {
 .notif-icon {
   width: 20px;
   height: 20px;
-  mask-image: url('assets/notification-bell.svg');
-  -webkit-mask-image: url('assets/notification-bell.svg');
+  mask-image: var(--icon-notification-bell);
+  -webkit-mask-image: var(--icon-notification-bell);
 }
 .notif-badge {
   position: absolute; top: -4px; right: -4px;
